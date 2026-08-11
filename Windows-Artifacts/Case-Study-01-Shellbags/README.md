@@ -74,7 +74,22 @@ At 04:33, I generated hash values for the extracted `UsrClass.dat` file using Sh
 `Figure 2. Hash generation using Sherlock Forensics`
 
 
+## 3. Hash Verification
 
+At 04:35, I verified the SHA-256 hash of the extracted `UsrClass.dat` file. The verification showed that the calculated SHA-256 hash matched the reference hash generated earlier.
+
+### Verification Result
+
+**INTEGRITY VERIFIED - SHA-256 MATCH**
+
+The verified SHA-256 value was: `fc4bddcdbb84dc20c968cc8dae66c903c628b14bd5e5f17af87bdc508b99cd4a`
+
+This confirms that the `UsrClass.dat` file used for the examination matched the file that was previously hashed.
+
+
+![SHA-256 verification](Evidence/Screenshot%202026-08-11%20163642.png)
+
+`Figure 3. SHA-256 hash verification`
 
 
 
