@@ -133,7 +133,24 @@ The parsed results included drive letters, folders, shell objects and other Wind
 `Figure 6. Shellbag parsing results`
 
 
+## 7. Identify the E: Drive
 
+During analysis, a Shellbag entry associated with the drive letter `E:\` was identified. The Shellbag record shows that Windows Explorer recorded the presence of the drive and stored it within the user's Shellbag data.
+
+### E: Drive Details
+
+| Property | Value |
+|---|---|
+| Drive Letter | E:\ |
+| Shell Type | Users property view: Drive letter |
+| MRU Position | 72 |
+| Child Bags | 1 |
+
+The presence of the `E:\` Shellbag entry indicates that the drive was visible to Windows Explorer and that a child item was recorded beneath it.
+
+**Figure 7. E:\ drive Shellbag entry**
+
+![E Drive Shellbag](Evidence/Screenshot%202026-08-11%20165233-2.png)
 
 
 
