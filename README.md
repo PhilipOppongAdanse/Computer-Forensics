@@ -29,12 +29,14 @@ This repository contains notes, practical exercises, case studies and investigat
 
 Topics include:
 
-- Windows Artifact Analysis
+## Repository Structure
+
+- [Windows Artifacts](Windows-Artifacts)
 - Registry Analysis
 - Browser Forensics
-- USB Device Investigations
+- USB Investigations
 - Memory Forensics
-- Forensic Reporting and so many more
+- Forensic Reporting
 
 With each topic, i would explore where evidences can be found, how it can be collected, what it can reveal, and its limitations during an investigation.
 
