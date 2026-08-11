@@ -113,9 +113,24 @@ At 04:38, I loaded the extracted `UsrClass.dat` file into ShellBags Explorer. Th
 
 
 
+## 6. Shellbag Parsing
+
+After loading the `UsrClass.dat` file, ShellBags Explorer parsed the Shellbag records stored within the Registry hive. The parser successfully processed all available Shellbag entries.
+
+### Parsing Results
+
+| Property | Value |
+|---|---|
+| Shellbags Found | 741 |
+| Shellbags Parsed | 741 |
+| Parsing Status | Successful |
+
+The parsed results included drive letters, folders, shell objects and other Windows Explorer locations that had been recorded by the operating system.
 
 
+![Shellbag parsing results](Evidence/Screenshot%202026-08-11%20165233.png)
 
+`Figure 6. Shellbag parsing results`
 
 
 
