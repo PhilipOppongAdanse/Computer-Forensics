@@ -149,7 +149,7 @@ During analysis, a Shellbag entry associated with the drive letter `E:\` was ide
 The presence of the `E:\` Shellbag entry indicates that the drive was visible to Windows Explorer and that a child item was recorded beneath it.
 
 
-![E Drive Shellbag](Windows-Artifacts/Case-Study-01-Shellbags/Evidence/Screenshot%202026-08-11%20165233.png)
+![E Drive Shellbag](./Evidence/Screenshot%202026-08-11%20165233.png)
 
 `Figure 7. E:\ drive Shellbag entry`
 
