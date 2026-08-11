@@ -97,7 +97,7 @@ This confirms that the `UsrClass.dat` file used for the examination matched the 
 At 04:37, I opened ShellBags Explorer v2.1.0 to begin examining the Shellbag artifacts from the extracted Registry hive. ShellBags Explorer was used to parse and display the Shellbag records found in the `UsrClass.dat` file.
 
 
-![ShellBags Explorer](Evidence/Screenshot%202026-08-11%20163840.png)
+![E Drive Shellbag](Evidence/Screenshot%202026-08-11%20184446.png)
 
 `Figure 4. ShellBags Explorer v2.1.0`
 
@@ -128,7 +128,7 @@ After loading the `UsrClass.dat` file, ShellBags Explorer parsed the Shellbag re
 The parsed results included drive letters, folders, shell objects and other Windows Explorer locations that had been recorded by the operating system.
 
 
-![Shellbag parsing results](Evidence/Screenshot%202026-08-11%20165233.png)
+![ShellBags Explorer](Evidence/Screenshot%202026-08-11%20163840.png)
 
 `Figure 6. Shellbag parsing results`
 
@@ -148,10 +148,10 @@ During analysis, a Shellbag entry associated with the drive letter `E:\` was ide
 
 The presence of the `E:\` Shellbag entry indicates that the drive was visible to Windows Explorer and that a child item was recorded beneath it.
 
-**Figure 7. E:\ drive Shellbag entry**
 
-![E Drive Shellbag](Evidence/Screenshot%202026-08-11%20165233-2.png)
+![E Drive Shellbag](Windows-Artifacts/Case-Study-01-Shellbags/Evidence/Screenshot%202026-08-11%20165233.png)
 
+`Figure 7. E:\ drive Shellbag entry`
 
 
 
