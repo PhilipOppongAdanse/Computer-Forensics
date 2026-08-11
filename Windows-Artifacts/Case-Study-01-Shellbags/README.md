@@ -1,4 +1,3 @@
-
 # Shellbags-Host-Based-Forensics
 
 A Windows host-based Shellbags investigation performed against an extracted `UsrClass.dat` Registry hive to identify folder and drive activity, examine Shellbag metadata, review timestamps, and determine what the artifact can and cannot prove.
@@ -32,10 +31,3 @@ A Windows host-based Shellbags investigation performed against an extracted `Usr
 10. [Timestamp Analysis](#10-timestamp-analysis)
 11. [Findings](#11-findings)
 12. [Conclusion](#12-conclusion)
-
-
-
-
-
-
-
