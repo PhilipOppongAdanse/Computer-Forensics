@@ -31,3 +31,29 @@ A Windows host-based Shellbags investigation performed against an extracted `Usr
 10. [Timestamp Analysis](#10-timestamp-analysis)
 11. [Findings](#11-findings)
 12. [Conclusion](#12-conclusion)
+
+
+## 1. Evidence Acquisition
+
+At 04:25, I extracted the Registry hive using FTK Imager v4.7.3.81.
+
+The file extracted for this investigation was:
+
+`UsrClass.dat`
+
+The purpose of this step was to obtain the Registry hive for forensic analysis while keeping the original evidence unchanged.
+
+### Acquisition Details
+
+| Property | Value |
+|---|---|
+| Evidence | `UsrClass.dat` |
+| Acquisition Tool | FTK Imager v4.7.3.81 |
+| Acquisition Time | 04:25 |
+| Analyst | **PHILIP OPPONG ADANSE** |
+
+**Figure 1. Registry hive extraction using FTK Imager**
+
+![Registry hive extraction](Evidence/01-ftk-hive-extraction.png.png)
+
+
