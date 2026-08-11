@@ -1,4 +1,3 @@
-Case-Study-01-Shellbags/README.md
 
 # Shellbags-Host-Based-Forensics
 
