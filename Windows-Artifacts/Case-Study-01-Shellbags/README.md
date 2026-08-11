@@ -179,3 +179,71 @@ The folder was stored as a directory Shell Item and was associated with an exFAT
 
 
 
+## 9. Timestamp Analysis
+
+The `new new` folder contained both file system timestamps and Shellbag interaction timestamps. These timestamps provide insight into when the folder existed on the source device and when Windows Explorer recorded interaction with the folder.
+
+### File System Timestamps
+
+| Timestamp | Value |
+|---|---|
+| Created On | 2026-03-15 03:41:58 |
+| Modified On | 2026-03-15 03:41:58 |
+| Last Accessed | 2026-03-15 03:41:56 |
+
+### Shellbag Interaction Timestamps
+
+| Timestamp | Value |
+|---|---|
+| First Interacted | 2026-04-28 08:24:56.082 |
+| Last Interacted | 2026-04-28 08:24:56.082 |
+| Registry Last Write Time | 2026-04-28 08:24:56.082 |
+
+The file system timestamps indicate when the folder metadata was recorded on the source file system. The Shellbag timestamps indicate when Windows Explorer recorded interaction with the folder. In this case, the first and last interaction times are identical, suggesting that only a single recorded interaction was preserved within the Shellbag artifact.
+
+The folder was associated with an exFAT file system, indicating that the folder likely originated from removable storage such as a USB flash drive or external storage device.
+
+![Timestamp information for E:\new new](./Evidence/Screenshot%202026-08-11%20165658.png)
+
+`Figure 9. Timestamp information for E:\new new`
+
+
+
+## 10. Findings
+
+The analysis of the UsrClass.dat registry hive using ShellBags Explorer v2.1.0 identified evidence of interaction with a removable storage device assigned the drive letter E:\. The Shellbag records showed a folder named **new new** located on the E:\ drive.
+
+The artifact contained the following information:
+
+- Drive Letter: E:\
+- File System: exFAT
+- Folder Name: new new
+- Folder Path: Desktop\E:\new new
+- Created On: 2026-03-15 03:41:58
+- Modified On: 2026-03-15 03:41:58
+- Last Accessed On: 2026-03-15 03:41:56
+- First Interacted With: 2026-04-28 08:24:56
+- Last Interacted With: 2026-04-28 08:24:56
+
+The Shellbag artifact confirms that Windows Explorer recorded interaction with the E:\ drive and the folder named **new new**. The artifact also indicates that the removable device used the exFAT file system.
+
+No evidence was identified to determine the contents of the folder or the files stored within it.
+
+
+
+## 11. Conclusion
+
+A forensic examination of the UsrClass.dat registry hive was conducted using ShellBags Explorer v2.1.0. The Shellbag records provided evidence that a removable storage device assigned the drive letter E:\ was connected to the system and interacted with through Windows Explorer.
+
+Analysis identified a folder named **new new** on the device. Metadata stored within the Shellbag artifact recorded folder timestamps, interaction timestamps and the file system type as exFAT. Shellbags are useful for demonstrating that folders and locations were viewed through Windows Explorer, even when the original device is no longer connected.
+
+Based on the available artifact, it can be concluded that the user interacted with the E:\ drive and viewed the folder **new new**. However, Shellbags alone cannot determine the contents of the folder, whether files were opened, copied or deleted, or who created the folder.
+
+
+
+
+
+
+
+
+
