@@ -262,6 +262,31 @@ Analysis identified a folder named **new new** on the device. Metadata stored wi
 Based on the available artifact, it can be concluded that the user interacted with the E:\ drive and viewed the folder **new new**. However, Shellbags alone cannot determine the contents of the folder, whether files were opened, copied or deleted, or who created the folder.
 
 
+
+## Skills Demonstrated
+
+- Registry Hive Acquisition
+- Evidence Preservation
+- Hash Generation and Verification
+- Shellbag Analysis
+- Timeline Reconstruction
+- Artifact Interpretation
+- Forensic Documentation
+- Report Writing
+
+
+
+## Tools Used
+
+| Tool | Version |
+|--------|--------|
+| FTK Imager | 4.7.3.81 |
+| Sherlock Forensics | Web Application |
+| ShellBags Explorer | 2.1.0 |
+
+
+
+
 ---
 
 **Training Case Study**
