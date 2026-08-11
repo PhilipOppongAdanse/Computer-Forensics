@@ -35,15 +35,12 @@ A Windows host-based Shellbags investigation performed against an extracted `Usr
 
 ## 1. Evidence Acquisition
 
-At 04:25, I extracted the Registry hive using FTK Imager v4.7.3.81.
+At 04:25, I extracted the Registry hive using FTK Imager v4.7.3.81. The file extracted for this investigation was: `UsrClass.dat`
 
-The file extracted for this investigation was:
+The purpose of this step was for me to obtain the Registry hive for forensic analysis while keeping the original evidence unchanged.
 
-`UsrClass.dat`
 
-The purpose of this step was to obtain the Registry hive for forensic analysis while keeping the original evidence unchanged.
-
-### Acquisition Details
+## Acquisition Details
 
 | Property | Value |
 |---|---|
@@ -52,8 +49,37 @@ The purpose of this step was to obtain the Registry hive for forensic analysis w
 | Acquisition Time | 04:25 |
 | Analyst | **PHILIP OPPONG ADANSE** |
 
-**Figure 1. Registry hive extraction using FTK Imager**
+
 
 ![Registry hive extraction](Evidence/01-ftk-hive-extraction.png.png)
+
+`Figure 1. Registry hive extraction using FTK Imager`
+
+
+
+## 2. Hash Generation
+
+At 04:33, I generated hash values for the extracted `UsrClass.dat` file using Sherlock Forensics. Hashing gives us a way to check whether the evidence has changed during the investigation.
+
+### Hash Values
+
+| Hash Type | Value |
+|---|---|
+| MD5 | `210c8ab2b2a2fb41615608e166e4a893` |
+| SHA-256 | `fc4bddcdbb84dc20c968cc8dae66c903c628b14bd5e5f17af87bdc508b99cd4a` |
+
+
+![Hash generation](Evidence/Screenshot%202026-08-11%20163525.png)
+
+`Figure 2. Hash generation using Sherlock Forensics`
+
+
+
+
+
+
+
+
+
 
 
