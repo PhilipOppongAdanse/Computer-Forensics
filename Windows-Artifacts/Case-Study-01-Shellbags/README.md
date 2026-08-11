@@ -154,9 +154,28 @@ The presence of the `E:\` Shellbag entry indicates that the drive was visible to
 `Figure 7. E:\ drive Shellbag entry`
 
 
+## 8. Analyze E:\new new
 
+Expanding the `E:\` Shellbag entry revealed a folder named `new new`. ShellBags Explorer recorded metadata relating to the folder, including timestamps, file system information and Shellbag interaction data.
 
+### Folder Details
 
+| Property | Value |
+|---|---|
+| Folder Name | new new |
+| Full Path | E:\new new |
+| Shell Type | Directory |
+| File System Hint | exFAT |
+| MRU Position | 0 |
+| Child Bags | 0 |
+| Node Slot | 253 |
+| MFT Entry Number | 5506624 |
+
+The folder was stored as a directory Shell Item and was associated with an exFAT file system.
+
+![Shellbag entry for E:\new new](./Evidence/Screenshot%202026-08-11%20165632.png)
+
+`Figure 8. Shellbag entry for E:\new new`
 
 
 
