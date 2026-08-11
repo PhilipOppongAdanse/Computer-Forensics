@@ -102,7 +102,14 @@ At 04:37, I opened ShellBags Explorer v2.1.0 to begin examining the Shellbag art
 `Figure 4. ShellBags Explorer v2.1.0`
 
 
+## 5. Load the Evidence
 
+At 04:38, I loaded the extracted `UsrClass.dat` file into ShellBags Explorer. The tool processed the Registry hive and displayed the Shellbag records found in the file. The `UsrClass.dat` file was used as the source for the Shellbag analysis.
+
+
+![UsrClass.dat loaded into ShellBags Explorer](Evidence/Screenshot%202026-08-11%20164437.png)
+
+**Figure 5.  `UsrClass.dat`  loaded into ShellBags Explorer**
 
 
 
