@@ -209,6 +209,28 @@ The folder was associated with an exFAT file system, indicating that the folder 
 
 
 
+## Key Timeline
+
+The table below summarizes the most relevant timestamps recovered from the Shellbag artifact.
+
+| Event | Timestamp (UTC) |
+|---------|---------|
+| Folder Created | 2026-03-15 03:41:58 |
+| Folder Modified | 2026-03-15 03:41:58 |
+| Folder Last Accessed | 2026-03-15 03:41:56 |
+| First Interaction Recorded by Shellbags | 2026-04-28 08:24:56 |
+| Last Interaction Recorded by Shellbags | 2026-04-28 08:24:56 |
+
+### Timeline Interpretation
+
+The Shellbag artifact indicates that the folder **new new** existed on the removable device before user interaction was recorded. The folder timestamps suggest the folder was present on the device on **15 March 2026**.
+
+Windows Explorer interaction with the folder was later recorded on **28 April 2026 at 08:24:56 UTC**. The Shellbag record confirms that the folder was viewed through Windows Explorer. However, the artifact alone cannot determine whether files inside the folder were opened, copied, modified, or deleted.
+
+
+
+
+
 ## 10. Findings
 
 The analysis of the UsrClass.dat registry hive using ShellBags Explorer v2.1.0 identified evidence of interaction with a removable storage device assigned the drive letter E:\. The Shellbag records showed a folder named **new new** located on the E:\ drive.
@@ -240,7 +262,13 @@ Analysis identified a folder named **new new** on the device. Metadata stored wi
 Based on the available artifact, it can be concluded that the user interacted with the E:\ drive and viewed the folder **new new**. However, Shellbags alone cannot determine the contents of the folder, whether files were opened, copied or deleted, or who created the folder.
 
 
+---
 
+**Training Case Study**
+
+This investigation was conducted in a controlled training environment and is published solely to demonstrate digital forensic examination and reporting techniques.
+
+**Analyst:** **PHILIP OPPONG ADANSE**
 
 
 
