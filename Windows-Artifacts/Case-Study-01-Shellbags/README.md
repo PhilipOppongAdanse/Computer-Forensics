@@ -92,6 +92,29 @@ This confirms that the `UsrClass.dat` file used for the examination matched the 
 `Figure 3. SHA-256 hash verification`
 
 
+## 4. Open ShellBags Explorer
+
+At 04:37, I opened ShellBags Explorer v2.1.0 to begin examining the Shellbag artifacts from the extracted Registry hive. ShellBags Explorer was used to parse and display the Shellbag records found in the `UsrClass.dat` file.
+
+
+![ShellBags Explorer](Evidence/Screenshot%202026-08-11%20163840.png)
+
+`Figure 4. ShellBags Explorer v2.1.0`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
