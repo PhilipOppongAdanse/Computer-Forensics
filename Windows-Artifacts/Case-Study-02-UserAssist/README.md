@@ -45,17 +45,20 @@ I performed a Windows host-based UserAssist investigation against an extracted `
 
 ## Table of Contents
 
-1. Evidence Acquisition
-2. Hash Generation
-3. Hash Verification
-4. Load NTUSER.DAT
-5. Navigate to UserAssist
-6. Program Execution Analysis
-7. Key Timeline
-8. Findings
-9. Limitations
-10. Conclusion
+## Table of Contents
 
+1. [Evidence Acquisition](#1-evidence-acquisition)
+2. [Hash Generation](#2-hash-generation)
+3. [Hash Verification](#3-hash-verification)
+4. [Load NTUSERDAT](#4-load-ntuserdat)
+5. [Navigate to UserAssist](#5-navigate-to-userassist)
+6. [Examine UserAssist Entries](#6-examine-userassist-entries)
+7. [Windows Explorer Activity](#7-windows-explorer-activity)
+8. [Notepad Activity](#8-notepad-activity)
+9. [Key Timeline](#9-key-timeline)
+10. [Findings](#10-findings)
+11. [Limitations](#11-limitations)
+12. [Conclusion](#12-conclusion)
 
 
 ---
