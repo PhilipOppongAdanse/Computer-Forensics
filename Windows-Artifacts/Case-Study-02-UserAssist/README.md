@@ -126,19 +126,135 @@ I launched the Registry Explorer v2026.5.0 and the extracted `NTUSER.DAT` hive w
 ![NTUSER.DAT Loaded](Evidence/Screenshot%202026-08-13%20155841.png)
 
 
+---
+
+## 5. Navigate to UserAssist
+
+After loading the `NTUSER.DAT` hive into Registry Explorer, i moved to examine the UserAssist artifact. The following Registry path was analyzed:
+
+```text
+Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist
+```
+
+UserAssist is a Windows Registry artifact that records information about applications executed through the Windows graphical user interface (GUI).
+
+The artifact can provide valuable information including:
+
+- Program Name
+- Run Count
+- Focus Count
+- Focus Time
+- Last Execution Time
+
+Two UserAssist GUID containers were identified within the Registry hive. These containers store execution information for applications launched by the user.
+
+### Figure 5. UserAssist Registry Path
+
+![UserAssist Registry Path](Evidence/Screenshot%202026-08-13%20155951.png)
 
 
+---
+
+## 6. Examine UserAssist Entries
+
+The UserAssist entries were examined to identify applications executed by the user. Registry Explorer automatically decoded the UserAssist entries, allowing the application names and execution details to be viewed.
+
+The analysis revealed multiple executed applications, including system utilities and user applications.
+
+Information available within the UserAssist entries included:
+
+- Application Name
+- Run Counter
+- Focus Count
+- Focus Time
+- Last Execution Timestamp
+
+### Figure 6. UserAssist Entries
+
+![UserAssist Entries](Evidence/Screenshot%202026-08-13%20170818.png)
 
 
+---
+
+## 7. Windows Explorer Activity
+
+One of the UserAssist entries i identified during analysis was **Windows Explorer**. Windows Explorer is the primary file management application in Windows and its presence within UserAssist indicated interaction through the graphical user interface.
+
+### Execution Details
+
+| Property | Value |
+|-----------|---------|
+| Application | Windows Explorer |
+| Run Counter | 21 |
+| Focus Count | 36 |
+| Focus Time | 21 Minutes 24 Seconds |
+| Last Executed | 2026-08-11 12:46:13 |
+
+The UserAssist record indicates that Windows Explorer was executed multiple times and remained in focus for an accumulated duration of approximately 21 minutes.
+
+### Figure 7. Windows Explorer UserAssist Entry
+
+![Windows Explorer Activity](Evidence/Screenshot%202026-08-13%20170847.png)
 
 
+---
+
+## 9. Key Timeline
+
+The table below summarizes the most relevant timestamps recovered from the UserAssist artifact.
+
+| Event | Timestamp (UTC) |
+|---------|---------|
+| Calculator Last Executed | 2026-04-24 07:16:01 |
+| Command Prompt Last Executed | 2026-05-14 11:06:30 |
+| Notepad Last Executed | 2026-08-08 18:32:36 |
+| Windows Explorer Last Executed | 2026-08-11 12:46:13 |
+
+### Timeline Interpretation
+
+The UserAssist artifact indicated a history of application execution activity on the system. Windows Explorer showed the highest level of interaction, recording multiple executions and the longest focus duration. The artifact also recorded execution of Notepad, Command Prompt and Calculator at various points in time.
+
+UserAssist timestamps provide evidence of application execution through the Windows graphical user interface and can assist investigators in reconstructing user activity.
 
 
+---
+
+## 10. Findings
+
+Analysis of the UserAssist artifact identified evidence of application execution activity within the examined user profile.
+
+The investigation identified the following applications:
+
+| Application | Run Counter | Last Executed |
+|-------------|------------|---------------|
+| Windows Explorer | 21 | 2026-08-11 12:46:13 |
+| Windows Notepad | 1 | 2026-08-08 18:32:36 |
+| Command Prompt | Unknown | 2026-05-14 11:06:30 |
+| Calculator | Unknown | 2026-04-24 07:16:01 |
+
+The UserAssist records indicated that Windows Explorer was the most frequently used application observed during the examination. The artifact successfully provided execution timestamps, run counts and focus statistics for several applications associated with the user profile.
+
+### Key Observations
+
+- Windows Explorer recorded 21 executions.
+- Windows Explorer accumulated approximately 21 minutes and 24 seconds of focus time.
+- Notepad was executed at least once.
+- Command Prompt execution was recorded.
+- Calculator execution was recorded.
+- UserAssist entries were successfully decoded and interpreted using Registry Explorer.
 
 
+---
 
+## 11. Limitations
 
+UserAssist is also a valuable source of evidence for identifying application execution activity. However, several limitations should be considered. UserAssist can indicate that an application was executed but cannot determine:
 
+- What actions were performed inside the application.
+- What files were opened.
+- What content was viewed or modified.
+- Whether activity was legitimate or malicious.
 
+For example, UserAssist confirmed that Notepad was executed but cannot determine what text was created, viewed or edited.
 
-
+Additional artifacts such as Prefetch, Jump Lists, RecentDocs and LNK files should be examined to obtain a more complete understanding of user activity.
