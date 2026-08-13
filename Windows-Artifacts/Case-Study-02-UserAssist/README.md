@@ -76,15 +76,13 @@ The `NTUSER.DAT` Registry hive was extracted from my Windows system using FTK Im
 
 ### Figure 1. NTUSER.DAT Extraction
 
-![NTUSER.DAT Extraction](Evidence/01-ftk-hive-extraction.png)
+![NTUSER.DAT Extraction](Evidence/01-ftk-hive-extraction.png.png)
 
 ---
 
 ## 2. Hash Generation
 
-To ensure evidence integrity, hash values were generated for the extracted `NTUSER.DAT` file using Sherlock Forensics.
-
-Hash generation was performed at **15:54 UTC**.
+To ensure evidence integrity, hash values were generated for the extracted `NTUSER.DAT` file using Sherlock Forensics. Hash generation was performed at **15:54 UTC**.
 
 ### Generated Hash Values
 
@@ -95,15 +93,13 @@ Hash generation was performed at **15:54 UTC**.
 
 ### Figure 2. Hash Generation
 
-![Hash Generation](Evidence/02-hash-generation.png)
+![Hash Generation](Evidence/Screenshot%202026-08-13%20155412.png)
 
 ---
 
 ## 3. Hash Verification
 
-The generated hash values were verified before analysis to confirm that the evidence had not been modified.
-
-Hash verification was completed at **15:57 UTC**.
+The generated hash values were verified before analysis to confirm that the evidence had not been modified. Hash verification was completed at **15:57 UTC**.
 
 ### Verification Result
 
@@ -117,20 +113,17 @@ The matching hash values confirmed that the evidence remained unchanged througho
 
 ### Figure 3. Hash Verification
 
-![Hash Verification](Evidence/03-hash-verification.png)
+![Hash Verification](Evidence/Screenshot%202026-08-13%20155613.png)
 
 ---
 
 ## 4. Load NTUSER.DAT
 
-Registry Explorer v2026.5.0 was launched and the extracted `NTUSER.DAT` hive was loaded for examination.
-
-The hive was loaded at **15:58 UTC**.
+I launched the Registry Explorer v2026.5.0 and the extracted `NTUSER.DAT` hive which was loaded for examination. The hive was loaded at **15:58 UTC**.
 
 ### Figure 4. NTUSER.DAT Loaded in Registry Explorer
 
-![NTUSER Loaded](Evidence/04-userassist-overview.png)
-
+![NTUSER.DAT Loaded](Evidence/Screenshot%202026-08-13%20155841.png)
 
 
 
