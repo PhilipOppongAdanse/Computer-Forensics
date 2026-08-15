@@ -35,7 +35,7 @@ The NTUSER.DAT Registry hive was extracted from the target system using FTK Imag
 
 ### Figure 1. NTUSER.DAT Extraction
 
-![NTUSER Extraction](Evidence/01-ntuser-extraction.png)
+![01-ftk-hive-extraction](Evidence/01-ftk-hive-extraction.png)
 
 ---
 
@@ -50,7 +50,7 @@ Cryptographic hash values were generated for the extracted NTUSER.DAT file using
 
 ### Figure 2. Hash Generation
 
-![Hash Generation](Evidence/02-hash-generation.png)
+![02-hash-generation](Evidence/02-hash-generation.png)
 
 ---
 
@@ -60,7 +60,7 @@ The generated hash values were verified before analysis commenced. Verification 
 
 ### Figure 3. Hash Verification
 
-![Hash Verification](Evidence/03-hash-verification.png)
+![03-hash-verification](Evidence/03-hash-verification.png)
 
 ---
 
@@ -70,7 +70,7 @@ The NTUSER.DAT hive was loaded into Registry Explorer v2026.5.0. Registry Explor
 
 ### Figure 4. NTUSER.DAT Loaded
 
-![NTUSER Loaded](Evidence/04-ntuser-loaded.png)
+![04-registry-explorer-loaded](Evidence/04-registry-explorer-loaded.png)
 
 ---
 
@@ -86,7 +86,7 @@ RecentDocs stores references to recently opened files and folders and organizes 
 
 ### Figure 5. RecentDocs Registry Key
 
-![RecentDocs Key](Evidence/05-recentdocs-key.png)
+![05-recentdocs-navigation](Evidence/05-recentdocs-navigation.png)
 
 ---
 
@@ -105,7 +105,7 @@ The document **INSTITUTE OF LOCAL GOVERNMENT STUDIES.docx** was assigned an MRU 
 
 ### Figure 6. DOCX Entries within RecentDocs
 
-![DOCX Entries](Evidence/06-docx-recentdocs-entries.png)
+![06-docx-recentdocs-entries](Evidence/06-docx-recentdocs-entries.png)
 
 The `.pdf` extension category was also examined. Analysis revealed 21 recorded PDF document entries aswell.
 
@@ -119,7 +119,7 @@ The document **INSTITUTE OF LOCAL GOVERNMENT STUDIES.pdf** was assigned an MRU p
 
 ### Figure 7. PDF Entries within RecentDocs
 
-![PDF Entries](Evidence/07-pdf-recentdocs-entries.png)
+![07-pdf-recentdocs-entries](Evidence/07-pdf-recentdocs-entries.png)
 
 ---
 
@@ -155,6 +155,8 @@ Registry timestamps associated with the RecentDocs entries provided useful conte
 2026-08-11 16:13:35
 ```
 
+![DOCX Timeline Analysis](Evidence/09-timeline-analysis-docx.png)
+
 The `.pdf` category recorded a Last Write timestamp of:
 
 ```text
@@ -165,7 +167,7 @@ These timestamps indicate RecentDocs activity occurring within approximately one
 
 ### Figure 8. RecentDocs Timeline Evidence
 
-![RecentDocs Timeline](Evidence/08-recentdocs-timeline.png)
+![PDF Timeline Analysis](Evidence/09-timeline-analysis-pdf.png)
 
 ---
 
