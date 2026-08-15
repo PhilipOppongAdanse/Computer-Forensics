@@ -69,7 +69,7 @@ At 04:33, I generated hash values for the extracted `UsrClass.dat` file using Sh
 | SHA-256 | `fc4bddcdbb84dc20c968cc8dae66c903c628b14bd5e5f17af87bdc508b99cd4a` |
 
 
-![Hash generation](Evidence/Screenshot%202026-08-11%20163525.png)
+![Hash Generation](Evidence/02-hash-generation.png)
 
 `Figure 2. Hash generation using Sherlock Forensics`
 
@@ -87,7 +87,7 @@ The verified SHA-256 value was: `fc4bddcdbb84dc20c968cc8dae66c903c628b14bd5e5f17
 This confirms that the `UsrClass.dat` file used for the examination matched the file that was previously hashed.
 
 
-![SHA-256 verification](Evidence/Screenshot%202026-08-11%20163642.png)
+![Hash Verification](Evidence/03-hash-verification.png)
 
 `Figure 3. SHA-256 hash verification`
 
@@ -97,7 +97,7 @@ This confirms that the `UsrClass.dat` file used for the examination matched the 
 At 04:37, I opened ShellBags Explorer v2.1.0 to begin examining the Shellbag artifacts from the extracted Registry hive. ShellBags Explorer was used to parse and display the Shellbag records found in the `UsrClass.dat` file.
 
 
-![E Drive Shellbag](Evidence/Screenshot%202026-08-11%20184446.png)
+![ShellBags Explorer](Evidence/04-shellbags-explorer.png)
 
 `Figure 4. ShellBags Explorer v2.1.0`
 
@@ -107,7 +107,7 @@ At 04:37, I opened ShellBags Explorer v2.1.0 to begin examining the Shellbag art
 At 04:38, I loaded the extracted `UsrClass.dat` file into ShellBags Explorer. The tool processed the Registry hive and displayed the Shellbag records found in the file. The `UsrClass.dat` file was used as the source for the Shellbag analysis.
 
 
-![UsrClass.dat loaded into ShellBags Explorer](Evidence/Screenshot%202026-08-11%20164437.png)
+![UsrClass Loaded](Evidence/05-usrclass-loaded.png)
 
 **Figure 5.  `UsrClass.dat`  loaded into ShellBags Explorer**
 
@@ -128,7 +128,7 @@ After loading the `UsrClass.dat` file, ShellBags Explorer parsed the Shellbag re
 The parsed results included drive letters, folders, shell objects and other Windows Explorer locations that had been recorded by the operating system.
 
 
-![ShellBags Explorer](Evidence/Screenshot%202026-08-11%20163840.png)
+![Shellbag Parsing Results](Evidence/06-shellbag-parsing-results.png)
 
 `Figure 6. Shellbag parsing results`
 
@@ -149,7 +149,7 @@ During analysis, a Shellbag entry associated with the drive letter `E:\` was ide
 The presence of the `E:\` Shellbag entry indicates that the drive was visible to Windows Explorer and that a child item was recorded beneath it.
 
 
-![E Drive Shellbag](./Evidence/Screenshot%202026-08-11%20165233.png)
+![E Drive Shellbag Entry](Evidence/07-e-drive-shellbag-entry.png)
 
 `Figure 7. E:\ drive Shellbag entry`
 
@@ -173,7 +173,7 @@ Expanding the `E:\` Shellbag entry revealed a folder named `new new`. ShellBags 
 
 The folder was stored as a directory Shell Item and was associated with an exFAT file system.
 
-![Shellbag entry for E:\new new](./Evidence/Screenshot%202026-08-11%20165632.png)
+![E:\new new Shellbag Entry](Evidence/08-e-drive-new-new-shellbag-entry.png)
 
 `Figure 8. Shellbag entry for E:\new new`
 
@@ -203,8 +203,7 @@ The file system timestamps indicate when the folder metadata was recorded on the
 
 The folder was associated with an exFAT file system, indicating that the folder likely originated from removable storage such as a USB flash drive or external storage device.
 
-![Timestamp information for E:\new new](./Evidence/Screenshot%202026-08-11%20165658.png)
-
+![Timestamp Information](Evidence/09-e-drive-new-new-timestamp-information.png)
 `Figure 9. Timestamp information for E:\new new`
 
 
