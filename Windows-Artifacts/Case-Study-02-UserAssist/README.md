@@ -96,7 +96,8 @@ To ensure evidence integrity, hash values were generated for the extracted `NTUS
 
 ### Figure 2. Hash Generation
 
-![Hash Generation](Evidence/Screenshot%202026-08-13%20155412.png)
+![Hash Generation](Evidence/02-hash-generation.png)
+
 
 ---
 
@@ -116,7 +117,7 @@ The matching hash values confirmed that the evidence remained unchanged througho
 
 ### Figure 3. Hash Verification
 
-![Hash Verification](Evidence/Screenshot%202026-08-13%20155613.png)
+![Hash Verification](Evidence/03-hash-verification.png)
 
 ---
 
@@ -126,7 +127,7 @@ I launched the Registry Explorer v2026.5.0 and the extracted `NTUSER.DAT` hive w
 
 ### Figure 4. NTUSER.DAT Loaded in Registry Explorer
 
-![NTUSER.DAT Loaded](Evidence/Screenshot%202026-08-13%20155841.png)
+![NTUSER.DAT Loaded](Evidence/04-ntuser-loaded.png)
 
 
 ---
@@ -153,7 +154,7 @@ Two UserAssist GUID containers were identified within the Registry hive. These c
 
 ### Figure 5. UserAssist Registry Path
 
-![UserAssist Registry Path](Evidence/Screenshot%202026-08-13%20155951.png)
+![UserAssist Registry Path](Evidence/05-userassist-path.png)
 
 
 ---
@@ -174,7 +175,7 @@ Information available within the UserAssist entries included:
 
 ### Figure 6. UserAssist Entries
 
-![UserAssist Entries](Evidence/Screenshot%202026-08-13%20170818.png)
+![UserAssist Entries](Evidence/06-userassist-entries.png)
 
 
 ---
@@ -197,8 +198,7 @@ The UserAssist record indicates that Windows Explorer was executed multiple time
 
 ### Figure 7. Windows Explorer UserAssist Entry
 
-![Windows Explorer Activity](Evidence/Screenshot%202026-08-13%20170847.png)
-
+![Windows Explorer Activity](Evidence/07-windows-explorer-activity.png)
 
 ---
 
