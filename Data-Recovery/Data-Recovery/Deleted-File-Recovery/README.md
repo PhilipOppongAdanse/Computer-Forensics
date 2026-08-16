@@ -1,361 +1,244 @@
 # USB Data Recovery & Forensic Analysis Using FTK Imager and Magnet AXIOM
 
-## Case Overview
+## Table of Contents
 
-This exercise demonstrates the forensic recovery and analysis of data from a formatted USB storage device. The objective was to determine whether user data could be recovered after formatting and to identify any evidential artifacts remaining on the device.
-
-The examination was conducted using a forensically acquired image of the USB drive and analyzed using industry-standard digital forensic tools.
+- [Case Overview](#case-overview)
+- [Investigation Details](#investigation-details)
+- [Objective](#objective)
+- [Chain of Custody](#chain-of-custody)
+- [Tools Used](#tools-used)
+- [Stage 1: Initial State of the USB Drive](#stage-1-initial-state-of-the-usb-drive)
+- [Stage 2: Evidence Acquisition Using FTK Imager](#stage-2-evidence-acquisition-using-ftk-imager)
+- [Stage 3: Creating a Magnet AXIOM Case](#stage-3-creating-a-magnet-axiom-case)
+- [Stage 4: Adding Evidence Sources](#stage-4-adding-evidence-sources)
+- [Stage 5: Evidence Processing](#stage-5-evidence-processing)
+- [Stage 6: Case Overview and Recovery Results](#stage-6-case-overview-and-recovery-results)
+- [Stage 7: File System Analysis](#stage-7-file-system-analysis)
+- [Stage 8: Recovered Image Analysis](#stage-8-recovered-image-analysis)
+- [Stage 9: Metadata Examination](#stage-9-metadata-examination)
+- [Stage 10: Recovered Document Analysis](#stage-10-recovered-document-analysis)
+- [Key Findings](#key-findings)
+- [Conclusion](#conclusion)
+- [Disclaimer](#disclaimer)
 
 ---
 
-## Investigation Details
+# Case Overview
+
+This project shows how data can be recovered and examined from a USB flash drive that had been formatted. Even though the drive was formatted, forensic tools and methods were used to recover files, metadata, and device information that were still on the drive.
+
+---
+
+# Investigation Details
 
 | Item | Description |
 |--------|-------------|
-| Examination Type | USB Data Recovery & Artifact Analysis |
+| Examination Type | USB Data Recovery |
 | Evidence Type | USB Flash Drive |
 | File System | FAT32 |
-| Capacity | Approximately 4GB |
 | Acquisition Tool | FTK Imager |
 | Analysis Tool | Magnet AXIOM |
 | Image Format | E01 |
 | Examiner | Philip Oppong Adanse |
-| Examination Date | August 2026 |
 
 ---
 
 # Objective
 
-The primary objectives of this examination were:
+The objective of this examination was to:
 
-- Recover data from a formatted USB drive.
-- Identify recoverable files and deleted content.
-- Extract available metadata from recovered files.
-- Determine whether ownership or usage information could be identified.
-- Validate that forensic recovery remains possible after formatting.
+- Recover data from a formatted USB storage device.
+- Identify recoverable files and artifacts.
+- Extract metadata from recovered files.
+- Demonstrate the effectiveness of forensic recovery techniques.
 
 ---
 
 # Chain of Custody
 
-| Date/Time | Action | Handler |
-|------------|---------|----------|
-| Acquisition Date | USB drive received for examination | Philip Oppong Adanse|
-| Acquisition Date | Forensic image created using FTK Imager | Philip Oppong Adanse |
-| Acquisition Date | Image hash verified | Philip Oppong Adanse |
-| Analysis Date | E01 image processed in Magnet AXIOM | Philip Oppong Adanse |
-| Analysis Date | Recovered artifacts reviewed and documented | Philip Oppong Adanse |
+| Date | Action | Examiner |
+|--------|---------|----------|
+| August 2026 | USB drive received for examination |  Philip Oppong Adanse |
+| August 2026 | Forensic image created using FTK Imager |  Philip Oppong Adanse |
+| August 2026 | E01 image processed using Magnet AXIOM |  Philip Oppong Adanse |
+| August 2026 | Artifacts recovered and documented | Philip Oppong Adanse |
 
 ---
 
 # Tools Used
 
-## FTK Imager
-
-FTK Imager was used to create a forensic image of the USB storage device in E01 format while preserving the integrity of the original evidence.
-
-### Purpose
-
-- Forensic acquisition
-- Evidence preservation
-- Image verification
-- Hash generation
+- FTK Imager
+- Magnet AXIOM Process
+- Magnet AXIOM Examine
 
 ---
 
-## Magnet AXIOM
+# Stage 1: Initial State of the USB Drive
 
-Magnet AXIOM was used to process and analyze the image acquired from FTK imager. 
+Before the examination began, the USB flash drive had already been formatted. The goal was to find out if any data could still be pulled off the drive.
 
-### Purpose
+![Formatted USB Drive](Evidence/01-formatted-drive.png)
 
-- Artifact extraction
-- File recovery
-- Metadata extraction
-- EXIF analysis
-- File system examination
+Formatting usually removes the file system's record of where files are, but it doesn't erase the actual data right away. Because of this, files can often still be recovered until new data overwrites them. In short: deleting data doesn't mean the data is really gone.
 
 ---
 
-# Stage 1: Evidence Acquisition
+# Stage 2: Evidence Acquisition Using FTK Imager
 
-A forensic image of the USB drive was created using FTK Imager where hashes very generated and verified.
+I created a forensic image of the USB drive using FTK Imager v4.7.3.81.
 
-### Actions Performed
+![FTK Imager Acquisition](Evidence/02-ftk-imager-1.png)
 
-1. Connected USB device.
-2. Launched FTK Imager.
-3. Selected physical drive.
-4. Created forensic image.
-5. Saved image in E01 format.
-6. Verified image integrity.
+I selected the source device to begin the imaging process.
 
-### Screenshot
+![FTK Imager Verification](Evidence/03-ftk-imager-2.png)
 
-> Insert FTK Imager acquisition screenshot here.
+The imaging process finished successfully and the image was verified. No bad sectors were found.
 
----
+### Acquisition Results
 
-# Stage 2: Processing Evidence in Magnet AXIOM
-
-The E01 image was loaded into Magnet AXIOM Process for examination.
-
-### Evidence Source
-
-```
-PENDRIVE.E01
-```
-
-### Processing Method
-
-```
-Parsing and Carving
-```
-
-### Observations
-
-The USB drive had been formatted; however, AXIOM successfully parsed the file system and carved recoverable artifacts from unallocated space.
-
-### Screenshot
-
-> Insert AXIOM evidence source configuration screenshot here.
+| Item | Value |
+|--------|---------|
+| Image Format | E01 |
+| Verification | Successful |
+| Bad Sectors | None |
 
 ---
 
-# Stage 3: File System Examination
+# Stage 3: Creating a Magnet AXIOM Case
 
-AXIOM identified the following file system information:
+After acquiring the image, I created a new case in Magnet AXIOM to process it.
+
+![Magnet AXIOM Case](Evidence/04-magnet-axiom-case.png)
+
+Before importing the image, I set up the case details and the workflow that would be used to process the evidence.
+
+---
+
+# Stage 4: Adding Evidence Sources
+
+The forensic image was imported into Magnet AXIOM for analysis.
+
+![Evidence Source Configuration](Evidence/05-magnet-axiom-evidence-sources.png)
+
+I selected the image file as the evidence source.
+
+![Evidence Source Selection](Evidence/06-magnet-axiom-evidence-sources-1.png)
+
+I then set up additional processing options.
+
+![Evidence Source Validation](Evidence/07-magnet-axiom-evidence-sources-2.png)
+
+AXIOM showed the evidence source details for me to confirm before processing.
+
+![Evidence Source Summary](Evidence/08-magnet-axiom-evidence-sources-3.png)
+
+The evidence source was added successfully and lined up for examination.
+
+---
+
+# Stage 5: Evidence Processing
+
+The forensic image was processed using Magnet AXIOM.
+
+![Evidence Processing](Evidence/09-magnet-axiom-evidence-analysis.png)
+
+While processing, AXIOM read through the file system and checked both the visible space and the empty-looking space to find recoverable files.
+
+---
+
+# Stage 6: Case Overview and Recovery Results
+
+Once processing was done, AXIOM created a summary of everything it recovered.
+
+![Case Overview](Evidence/10-magnet-axiom-case-overview.png)
+
+The analysis found several recoverable files, proving that formatting had not fully wiped the user data off the device.
+
+---
+
+# Stage 7: File System Analysis
+
+I looked at the recovered file system details.
+
+![File System Analysis](Evidence/11-magnet-axiom-filesystem.png)
+
+### Recovered Information
 
 | Attribute | Value |
 |------------|---------|
 | File System | FAT32 |
 | Volume Name | NO NAME |
 | Volume Serial Number | 1A506229 |
-| Total Capacity | 4,018,143,232 Bytes |
-| Drive Type | Fixed |
 
-### Findings
-
-The FAT32 structure remained partially recoverable, enabling AXIOM to identify residual metadata and recover deleted content.
-
-### Screenshot
-
-> Insert File System Information screenshot here.
+The FAT32 structure could still be identified even after the drive was formatted.
 
 ---
 
-# Stage 4: Artifact Recovery Results
+# Stage 8: Recovered Image Analysis
 
-AXIOM successfully recovered multiple artifacts from the formatted drive.
+AXIOM successfully recovered image files from the formatted USB drive.
 
-## Recovered Artifact Categories
+![Recovered Image](Evidence/12-magnet-axiom-recovered-image-1.png)
 
-| Category | Count |
-|-----------|--------|
-| Pictures | 75 |
-| Photoshop Files | 1 |
-| PDF Documents | 1 |
-| Device Identifiers | 3 |
-| People Identifiers | 1 |
-
-### Observation
-
-Despite formatting, numerous files remained recoverable due to data remnants located in unallocated space.
-
-### Screenshot
-
-> Insert Artifact Categories screenshot here.
+The recovered image could still be viewed and still had its metadata attached, which was useful for the analysis. This shows that photo content can survive even after a drive is formatted.
 
 ---
 
-# Stage 5: Image Recovery
+# Stage 9: Metadata Examination
 
-A total of 75 image files were recovered.
+I reviewed the metadata attached to the recovered files to find out more about the device and the files themselves.
 
-Recovered photographs appeared intact and viewable through AXIOM's preview pane.
-
-### Examples
-
-Recovered images included:
-
-- Residential property photographs
-- Outdoor scenes
-- General image files
-
-### Significance
-
-The successful recovery of image files demonstrates that formatting does not immediately destroy file content. Data remnants often remain available until overwritten.
-
-### Screenshot
-
-> Insert recovered image gallery screenshot here.
-
----
-
-# Stage 6: EXIF Metadata Analysis
-
-Several recovered images contained embedded EXIF metadata.
+![Artifact Metadata](Evidence/13-magnet-axiom-artifact-information.png)
 
 ### Metadata Recovered
 
-| Field | Value |
-|---------|---------|
-| Camera Manufacturer | Hasselblad |
-| Camera Model | L2D-20c |
-| Camera Serial Number | 5Z9FL9P1AA0NHH |
-| Lens Model | 24mm f/2.8-11 |
-| Software Version | 00.04.89.27 |
-| Original Image Width | 5280 |
-| Original Image Height | 3956 |
+- Camera Manufacturer: Hasselblad
+- Camera Model: L2D-20c
+- Camera Serial Number: 5Z9FL9P1AA0NHH
+- GPS Coordinates Present
+- Timestamp Information Present
 
-### GPS Metadata
-
-| Field | Value |
-|---------|---------|
-| Latitude | 5.660111111111111 |
-| Longitude | -0.03508611111111111 |
-| Altitude | 51.781 m |
-
-### Significance
-
-The embedded metadata revealed:
-
-- Device used to capture the image.
-- Geographical location of image capture.
-- Date and time information.
-- Camera serial number.
-
-Such metadata can be valuable during investigations involving:
-
-- Ownership attribution.
-- Location verification.
-- Timeline reconstruction.
-- Device identification.
-
-### Screenshot
-
-> Insert EXIF Metadata screenshot here.
+This metadata helped identify which device took the photo and where it was taken.
 
 ---
 
-# Stage 7: Document Recovery
+# Stage 10: Recovered Document Analysis
 
-AXIOM recovered a PDF document from the formatted USB drive.
+A PDF document was also recovered during the examination.
 
-### Document Information
+![Recovered PDF Document](Evidence/14-magnet-axiom-pdf.png)
 
-| Attribute | Value |
-|------------|---------|
-| Type | PDF |
-| Author | Philip Adanse |
-| Last Modified | 28 July 2026 |
-
-### Observation
-
-The document remained recoverable despite the formatting operation.
-
-The metadata identified a potential user associated with the document.
-
-### Screenshot
-
-> Insert recovered PDF screenshot here.
+The recovered document still had its metadata, including who created it and when it was last changed. This shows that documents created by users can also survive a formatting operation.
 
 ---
 
 # Key Findings
 
-## Finding 1
+1. Formatting did not fully erase the data on the USB drive.
 
-A formatted USB drive does not necessarily result in complete data destruction.
+2. Several files could still be recovered from the drive.
 
-### Evidence
+3. The recovered images still had useful EXIF metadata attached.
 
-75 image files, 1 PDF document, and additional artifacts were successfully recovered.
+4. GPS location data could be recovered from the image metadata.
 
----
+5. Information identifying the camera used was recovered.
 
-## Finding 2
+6. A PDF document was recovered after the drive was formatted.
 
-EXIF metadata remained intact within recovered images.
-
-### Evidence
-
-GPS coordinates, camera model, camera serial number, and image creation information were extracted.
-
----
-
-## Finding 3
-
-User-related information was recoverable.
-
-### Evidence
-
-The recovered PDF document identified:
-
-```
-Philip Adanse
-```
-
-as the document author.
-
----
-
-## Finding 4
-
-The original storage structure remained partially identifiable.
-
-### Evidence
-
-FAT32 file system metadata and volume information were successfully parsed.
+7. File system details and device information were still available for examination.
 
 ---
 
 # Conclusion
 
-The forensic examination demonstrated that substantial data remained recoverable from the formatted USB drive. Using FTK Imager for acquisition and Magnet AXIOM for analysis, multiple files and artifacts were successfully recovered, including photographs, document files, device identifiers, and metadata.
+This examination shows that forensic recovery methods work well, even on storage media that has been formatted. Using FTK Imager and Magnet AXIOM, I was able to recover several files and artifacts from the USB drive, including photos, metadata, and documents.
 
-Of particular significance was the recovery of EXIF metadata containing camera information and GPS coordinates, as well as a PDF document linked to a named user. These findings illustrate the importance of forensic imaging and artifact recovery techniques when examining formatted storage media.
-
-The examination confirms that formatting alone is insufficient to securely erase data and that valuable evidential artifacts may persist until overwritten.
+The evidence recovered here shows why proper forensic acquisition and analysis matter and why it proves that formatting a drive is not a reliable way to permanently delete data.
 
 ---
 
-# Evidence Screenshots
+# Disclaimer
 
-## Figure 1 – Case Creation in Magnet AXIOM
-
-*Insert Screenshot*
-
-## Figure 2 – Evidence Source Selection
-
-*Insert Screenshot*
-
-## Figure 3 – Processing Configuration
-
-*Insert Screenshot*
-
-## Figure 4 – File System Information
-
-*Insert Screenshot*
-
-## Figure 5 – Artifact Categories
-
-*Insert Screenshot*
-
-## Figure 6 – Recovered Images
-
-*Insert Screenshot*
-
-## Figure 7 – EXIF Metadata Analysis
-
-*Insert Screenshot*
-
-## Figure 8 – Recovered PDF Document
-
-*Insert Screenshot*
-
----
-
-**Examiner:** MrPhilGhana  
-**Tools Used:** FTK Imager 4.7.x, Magnet AXIOM 9.11  
-**Examination Type:** USB Data Recovery & Artifact Recovery
+This project was carried out in a controlled lab setting for training and educational purposes only. The USB drive used belonged to the examiner (Philip Oppong Adanse) and was authorized for this analysis. The findings in this case study are meant only to show forensic recovery methods, and should not be read as anything beyond this training exercise.
