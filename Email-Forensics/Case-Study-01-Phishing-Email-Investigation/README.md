@@ -180,6 +180,9 @@ I checked the authentication results to see if the sender could be trusted.
 
 ![Email Header Analysis](Evidence/07-email-header-analysis-2.png)
 
+![Email Header](Evidence/04-email-header.png)
+
+
 
 ### Results
 
@@ -217,6 +220,8 @@ Real companies usually stick to consistent, recognizable domains. Phishing email
 # Stage 8: Email Routing Analysis
 
 I rebuilt the email's route using the Received headers.
+
+![Email Header Analysis](Evidence/07-email-header-analysis-2.png)
 
 ![Email Header Analysis](Evidence/08-email-header-analysis-3.png)
 
