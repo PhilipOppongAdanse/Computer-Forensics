@@ -153,6 +153,13 @@ I ran the extracted header through an email header analysis tool.
 
 ![Email Header Analysis](Evidence/05-email-header-analysis.png)
 
+![Email Header Analysis](Evidence/06-email-header-analysis-1.png)
+
+![Email Header Analysis](Evidence/07-email-header-analysis-2.png)
+
+
+
+
 ### Findings
 
 | Field | Value |
@@ -170,7 +177,8 @@ The sender domain immediately appeared suspicious and did not resemble a legitim
 
 I checked the authentication results to see if the sender could be trusted.
 
-![Email Header Analysis](Evidence/06-email-header-analysis-1.png)
+![Email Header Analysis](Evidence/07-email-header-analysis-2.png)
+
 
 ### Results
 
