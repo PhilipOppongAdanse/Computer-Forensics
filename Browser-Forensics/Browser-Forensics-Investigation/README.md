@@ -5,7 +5,7 @@
 | Field | Details |
 |---------|---------|
 | Case Title | Browser History and Activity Analysis |
-| Examiner | MRPHILGHANA |
+| Examiner | Philip Oppong Adanse |
 | Tools Used | FTK Imager 4.7.3.8, Autopsy 4.22.1 |
 | Evidence Type | Google Chrome Browser Artifacts |
 | Acquisition Method | Logical Acquisition |
@@ -15,9 +15,9 @@
 
 # Overview
 
-This investigation focused on the acquisition, preservation, verification, and analysis of Google Chrome browser artifacts. The examination was conducted using FTK Imager for evidence acquisition and Autopsy 4.22.1 for forensic analysis.
+This investigation covered the collection, preservation, verification, and analysis of Google Chrome browser artifacts. I used FTK Imager to collect the evidence and Autopsy 4.22.1 to analyze it.
 
-The objective was to identify user browsing activity, search behavior, frequently visited websites, browser-generated artifacts, and evidence of online activity while maintaining forensic integrity throughout the investigation process.
+The goal was to find out what the user browsed, what they searched for, which sites they visited most, and other browser-related evidence while keeping the evidence untouched and trustworthy throughout the process.
 
 ---
 
@@ -56,7 +56,7 @@ The objective was to identify user browsing activity, search behavior, frequentl
 
 FTK Imager was launched to perform a logical acquisition of browser artifacts from the target system.
 
-![FTK Imager](01-FTK-IMAGER.png)
+![FTK Imager](./Evidence/01-FTK-IMAGER.png)
 
 ---
 
@@ -64,17 +64,17 @@ FTK Imager was launched to perform a logical acquisition of browser artifacts fr
 
 The Google Chrome browser data directory was identified and selected for extraction.
 
-![Browser Artifact Extraction](02-FTK-EXTRACTION-IN-PROGRESS.png)
+![Browser Artifact Extraction](./Evidence/02-FTK-EXTRACTION-IN-PROGRESS.png)
 
-The extraction process preserved browser artifacts in their original state for forensic analysis.
+The extraction kept the browser files exactly as they were, so they'd stay reliable for analysis.
 
 ---
 
 ## Evidence Tree Examination
 
-The evidence tree was reviewed to locate Google Chrome browser data.
+I looked through the evidence tree to find the Google Chrome data.
 
-![Evidence Tree](03-EVIDENCE-TREE-OF-CHROME.png)
+![Evidence Tree](./Evidence/03-EVIDENCE-TREE-OF-CHROME.png)
 
 The browser profile structure revealed multiple artifacts containing historical user activity.
 
@@ -82,9 +82,9 @@ The browser profile structure revealed multiple artifacts containing historical 
 
 ## Chrome Default Profile Artifacts
 
-The Chrome Default profile contained several browser databases of forensic value.
+The Chrome "Default" profile had several databases worth examining.
 
-![Chrome Default Artifacts](04-ARTIFACTS-IN-CHROME-DEFAULT.png)
+![Chrome Default Artifacts](./Evidence/04-ARTIFACTS-IN-CHROME-DEFAULT.png)
 
 ### Identified Artifacts
 
@@ -95,13 +95,13 @@ The Chrome Default profile contained several browser databases of forensic value
 - Shortcuts
 - Top Sites
 
-These artifacts collectively provide evidence relating to browsing history, saved logins, bookmarks, frequently visited websites, and user browsing behavior.
+Together, these files hold evidence about browsing history, saved logins, bookmarks, frequently visited sites, and general browsing habits.
 
 ---
 
 # Phase 2: Evidence Integrity Verification
 
-To maintain forensic integrity, cryptographic hashes were generated and verified for each recovered artifact.
+To keep the evidence trustworthy, I generated and checked hash values for every file I recovered.
 
 ---
 
@@ -109,11 +109,11 @@ To maintain forensic integrity, cryptographic hashes were generated and verified
 
 ### Hash Generation
 
-![Bookmark Hash Generation](05-HASH-GENERATION-BOOKMARK.png)
+![Bookmark Hash Generation](./Evidence/05-HASH-GENERATION-BOOKMARK.png)
 
 ### Hash Verification
 
-![Bookmark Hash Verification](06-HASH-VERIFICATION-BOOKMARK.png)
+![Bookmark Hash Verification](./Evidence/06-HASH-VERIFICATION-BOOKMARK.png)
 
 **Result:** MD5 Verification Successful
 
@@ -123,11 +123,11 @@ To maintain forensic integrity, cryptographic hashes were generated and verified
 
 ### Hash Generation
 
-![Favicon Hash Generation](07-HASH-GENERATION-FAVICON.png)
+![Favicon Hash Generation](./Evidence/07-HASH-GENERATION-FAVICON.png)
 
 ### Hash Verification
 
-![Favicon Hash Verification](08-HASH-VERIFICATION-FAVICON.png)
+![Favicon Hash Verification](./Evidence/08-HASH-VERIFICATION-FAVICON.png)
 
 **Result:** MD5 Verification Successful
 
@@ -137,11 +137,11 @@ To maintain forensic integrity, cryptographic hashes were generated and verified
 
 ### Hash Generation
 
-![History Hash Generation](09-HASH-GENERATION-HISTORY.png)
+![History Hash Generation](./Evidence/09-HASH-GENERATION-HISTORY.png)
 
 ### Hash Verification
 
-![History Hash Verification](10-HASH-VERIFICATION-HISTORY.png)
+![History Hash Verification](./Evidence/10-HASH-VERIFICATION-HISTORY.png)
 
 **Result:** MD5 Verification Successful
 
@@ -151,11 +151,11 @@ To maintain forensic integrity, cryptographic hashes were generated and verified
 
 ### Hash Generation
 
-![Login Data Hash Generation](11-HASH-GENERATION-LOGIN-DATA.png)
+![Login Data Hash Generation](./Evidence/11-HASH-GENERATION-LOGIN-DATA.png)
 
 ### Hash Verification
 
-![Login Data Hash Verification](12-HASH-VERIFICATION-LOGIN-DATA.png)
+![Login Data Hash Verification](./Evidence/12-HASH-VERIFICATION-LOGIN-DATA.png)
 
 **Result:** MD5 Verification Successful
 
@@ -165,11 +165,11 @@ To maintain forensic integrity, cryptographic hashes were generated and verified
 
 ### Hash Generation
 
-![Shortcuts Hash Generation](13-HASH-GENERATION-SHORTCUT.png)
+![Shortcuts Hash Generation](./Evidence/13-HASH-GENERATION-SHORTCUT.png)
 
 ### Hash Verification
 
-![Shortcuts Hash Verification](14-HASH-VERIFICATION-SHORTCUT.png)
+![Shortcuts Hash Verification](./Evidence/14-HASH-VERIFICATION-SHORTCUT.png)
 
 **Result:** MD5 Verification Successful
 
@@ -179,11 +179,11 @@ To maintain forensic integrity, cryptographic hashes were generated and verified
 
 ### Hash Generation
 
-![Top Sites Hash Generation](15-HASH-GENERATION-TOP-SITES.png)
+![Top Sites Hash Generation](./Evidence/15-HASH-GENERATION-TOP-SITES.png)
 
 ### Hash Verification
 
-![Top Sites Hash Verification](16-HASH-VERIFICATION-TOP-SITES.png)
+![Top Sites Hash Verification](./Evidence/16-HASH-VERIFICATION-TOP-SITES.png)
 
 **Result:** MD5 Verification Successful
 
@@ -193,9 +193,9 @@ To maintain forensic integrity, cryptographic hashes were generated and verified
 
 ## Ingest Configuration
 
-The recovered browser artifacts were imported into Autopsy and processed using forensic ingest modules.
+I imported the recovered browser files into Autopsy and ran them through several forensic modules.
 
-![Autopsy Ingest](17-AUTOPSY-INGEST.png)
+![Autopsy Ingest](./Evidence/17-AUTOPSY-INGEST.png)
 
 ### Enabled Modules
 
@@ -208,7 +208,7 @@ The recovered browser artifacts were imported into Autopsy and processed using f
 - Email Parser
 - Picture Analyzer
 
-These modules assisted in reconstructing browser activity and identifying relevant artifacts.
+These modules helped me piece together the browser activity and spot useful artifacts.
 
 ---
 
@@ -216,7 +216,7 @@ These modules assisted in reconstructing browser activity and identifying releva
 
 The browser artifacts were successfully loaded into the Autopsy case.
 
-![Evidence Loaded](18-AUTOPSY-EVIDENCE-LOADED.png)
+![Evidence Loaded](./Evidence/18-AUTOPSY-EVIDENCE-LOADED.png)
 
 The evidence source contained browser databases associated with user browsing activity.
 
@@ -226,7 +226,7 @@ The evidence source contained browser databases associated with user browsing ac
 
 Autopsy parsed the browser history database and recovered thousands of browsing records.
 
-![History Analysis](19-AUTOPSY-HISTORY-URL.png)
+![History Analysis](./Evidence/19-AUTOPSY-HISTORY-URL.png)
 
 The recovered URLs revealed user activity involving:
 
@@ -242,7 +242,7 @@ The recovered URLs revealed user activity involving:
 
 Additional URL records were recovered from the browser history database.
 
-![Additional URL Records](20-AUTOPSY-HISTORY-URL-1.png)
+![Additional URL Records](./Evidence/20-AUTOPSY-HISTORY-URL-1.png)
 
 Examples included visits to:
 
@@ -259,7 +259,7 @@ Examples included visits to:
 
 Autopsy recovered keyword searches from browser artifacts.
 
-![Keyword Search Analysis](21-AUTOPSY-KEYWORD-SEARCH-TERM.png)
+![Keyword Search Analysis](./Evidence/21-AUTOPSY-KEYWORD-SEARCH-TERM.png)
 
 ### Recovered Search Terms
 
@@ -289,7 +289,7 @@ The recovered searches indicate interest in:
 
 Browser database statistics were extracted from the History database.
 
-![SQLite Statistics](22-SQLITE-SEQUENCE.png)
+![SQLite Statistics](./Evidence/22-SQLITE-SEQUENCE.png)
 
 ### Database Records
 
@@ -300,7 +300,7 @@ Browser database statistics were extracted from the History database.
 | Clusters | 1,513 |
 | Visited Links | 9,226 |
 
-These records demonstrate substantial browser activity over time.
+These numbers show a lot of browsing activity built up over time.
 
 ---
 
@@ -308,8 +308,7 @@ These records demonstrate substantial browser activity over time.
 
 The Top Sites database identified the browser's most frequently visited websites.
 
-![Top Sites](23-TOP-SITES.png)
-
+![Top Sites](./Evidence/23-TOP-SITES.png)
 ### Frequently Visited Websites
 
 | Rank | Website |
@@ -341,7 +340,7 @@ The browser activity demonstrates regular interaction with:
 
 ## Finding 1
 
-A total of approximately **3,447 URL records** were recovered from browser history.
+About 3,447 URL records were recovered from the browser history.
 
 ## Finding 2
 
@@ -353,7 +352,7 @@ Artificial Intelligence platforms including ChatGPT and Claude AI were accessed 
 
 ## Finding 4
 
-Multiple searches associated with cybersecurity and digital forensics were recovered.
+Several searches were related to cybersecurity and digital forensics.
 
 ## Finding 5
 
@@ -365,7 +364,7 @@ Google Docs and collaborative platforms were identified throughout browser histo
 
 ## Finding 7
 
-Multiple Flightradar24 entries indicate repeated aviation tracking activity.
+Multiple visits to Flightradar24 suggest repeated flight-tracking activity.
 
 ## Finding 8
 
@@ -375,13 +374,13 @@ All examined browser artifacts successfully passed integrity verification checks
 
 # Conclusion
 
-The forensic examination successfully acquired, preserved, verified, and analyzed Google Chrome browser artifacts using FTK Imager and Autopsy.
+This examination successfully collected, preserved, verified, and analyzed Google Chrome browser data using FTK Imager and Autopsy.
 
-Analysis of browser history, search activity, top sites, and supporting browser databases revealed extensive interaction with artificial intelligence platforms, cybersecurity resources, digital forensics learning materials, communication services, productivity tools, and aviation tracking websites.
+Looking at the browsing history, search activity, top sites, and other browser databases showed heavy interaction of AI tools, cybersecurity resources, digital forensics learning material, messaging apps, productivity tools, and flight-tracking sites.
 
-The recovered evidence demonstrates regular use of ChatGPT, Claude AI, Telegram Web, GitHub, Canva, Google Docs, and Flightradar24. Search activity further suggests ongoing research into cybersecurity, digital forensics, and professional development opportunities.
+The evidence showed regular use of ChatGPT, Claude AI, Telegram Web, GitHub, Canva, Google Docs, and Flightradar24. The search activity also points to ongoing research into cybersecurity, digital forensics, and career development.
 
-Hash verification confirmed the integrity of all examined artifacts, supporting the reliability and authenticity of the findings presented in this investigation.
+Hash verification confirmed that every artifact examined stayed unchanged, which supports the reliability of the findings in this report.
 
 ---
 
@@ -394,9 +393,5 @@ Hash verification confirmed the integrity of all examined artifacts, supporting 
 
 # Examiner
 
-**MRPHILGHANA**  
+**Philip Oppong Adanse**  
 Digital Forensics Examiner
-
----
-
-*End of Report*
