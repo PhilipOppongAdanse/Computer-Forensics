@@ -217,6 +217,7 @@ I verified the presence of password protection, extracted the archive hash, and 
 ```text
 Love12345
 
+
 Following recovery of the credential, I validated the password, gained access to the archive, and successfully opened the protected PDF document.
 
 The examination confirmed that the archive's protection mechanism was vulnerable to a dictionary-based password cracking attack due to the use of a password present within a commonly used wordlist.
