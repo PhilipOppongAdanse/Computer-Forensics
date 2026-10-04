@@ -341,4 +341,4 @@ What initially appeared to be a simple one-page PDF ultimately contained several
 
 This case study was completed in a controlled forensic laboratory environment for educational and professional development purposes.
 
-All evidence examined during this investigation was provided as part of a forensic challenge scenario. The findings documented in this repository reflect the results obtained during my examination of the supplied exhibit and are intended to demonstrate digital forensic methodology, evidence handling, artifact recovery, and analytical reporting techniques.
+All evidence examined during this investigation was provided as part of a forensic challenge scenario. The findings documented in this repository reflect the results obtained during my examination of the supplied exhibit and are intended to demonstrate digital forensic methodology, evidence handling, artifact recovery, and analytical reporting techniques. CHECK FULL REPORT FOLDER for detailed report 
