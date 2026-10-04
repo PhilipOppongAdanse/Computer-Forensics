@@ -103,8 +103,7 @@ SHA256 Validation
 File Identification
 ```
 
-![Evidence Verification](Evidence/01-hash-verification.png)
-
+![Figure 1](Evidence/01.png)
 ---
 
 # Phase 1 – Initial PDF Examination
@@ -140,8 +139,7 @@ While this warning alone did not prove the existence of hidden content, it sugge
 
 ### Figure 02 – PDF Metadata Examination
 
-![Metadata Analysis](Evidence/02-exiftool-analysis.png)
-
+![Figure 2](Evidence/02.png)
 ---
 
 # Phase 2 – Discovery of Hidden Data
@@ -176,8 +174,7 @@ This explained why the file opened normally while still carrying hidden content.
 
 ### Figure 03 – Embedded ZIP Archive Discovery
 
-![ZIP Discovery](Evidence/03-hidden-zip-discovery.png)
-
+![Figure 3](Evidence/03.png)
 ---
 
 # Phase 3 – Archive Extraction
@@ -192,8 +189,7 @@ At this stage, the investigation moved from file carving into content reconstruc
 
 ### Figure 04 – Extracted Archive Contents
 
-![Archive Extraction](Evidence/04-archive-extraction.png)
-
+![Figure 4](Evidence/04.png)
 ---
 
 # Phase 4 – Base64 Decoding
@@ -210,8 +206,7 @@ This represented the first major hidden artifact recovered from the evidence.
 
 ### Figure 05 – Base64 Decoding Process
 
-![Base64 Decoding](Evidence/05-base64-decoding.png)
-
+![Figure 5](Evidence/05.png)
 ---
 
 # Phase 5 – Email Reconstruction
@@ -235,8 +230,7 @@ Instead, I validated the true file type.
 
 ### Figure 06 – Email Reconstruction
 
-![Email Reconstruction](Evidence/06-email-reconstruction.png)
-
+![Figure 6](Evidence/06.png)
 ---
 
 # Phase 6 – Attachment Analysis
@@ -259,8 +253,7 @@ The image was extracted for further analysis.
 
 ### Figure 07 – Hidden JPEG Attachment
 
-![JPEG Attachment](Evidence/07-jpeg-analysis.png)
-
+![Figure 7](Evidence/07.png)
 ---
 
 # Phase 7 – Secondary Hidden Archive
@@ -277,8 +270,7 @@ The archive was extracted and analyzed separately.
 
 ### Figure 08 – Secondary ZIP Archive
 
-![Second Archive](Evidence/08-secondary-archive.png)
-
+![Figure 8](Evidence/08.png)
 ---
 
 # Phase 8 – Final PDF Recovery
@@ -293,8 +285,7 @@ At this point, all artifact layers had been successfully reconstructed.
 
 ### Figure 09 – Final PDF Recovery
 
-![Final PDF](Evidence/09-final-pdf.png)
-
+![Figure 15](Evidence/15.png)
 ---
 
 # Flag Analysis
